@@ -5,23 +5,51 @@ $(document).ready(function(){
   $('.headlineWrapper').delay(500).animate({left:'50%'}, 1000);
   $('.imageWrapper').delay(500).animate({top:'30%'}, 1000);
 
-  //SHOW MENU BAR
-  $(document).scroll(function() {
+  function jumbotronInView() {
     var position = $(this).scrollTop();
-    if (position > 730) {
-      $('.scrollMenu').fadeIn(200);
+    jumbrotronHeight = $('.jumbotron').height();
+    var correctedOffset = jumbrotronHeight - 70;
+    if (correctedOffset > position) {
+      return true;
     }else{
-      $('.scrollMenu').fadeOut(200);
+      return false;
+    }
+  }
+
+  $('.container').click(function() {
+    if (!($('.scrollMenu').hasClass('toggled'))) {
+      $('.scrollMenu').css('height', '100vh');
+      $('.scrollMenu').addClass('toggled');
+    }else{
+      if (!jumbotronInView()) {
+        $('.scrollMenu').css('height', '80px');
+      }else{
+        $('.scrollMenu').css('height', '0px');
+      }
+      $('.scrollMenu').removeClass('toggled');
     }
   });
 
+  //SHOW MENU BAR
+  $(document).scroll(function() {
+    var position = $(this).scrollTop();
+    jumbrotronHeight = $('.jumbotron').height();
+    var correctedOffset = jumbrotronHeight - 70;
+    if (!($('.scrollMenu').hasClass('toggled'))) {
+      if (position > correctedOffset) {
+        $('.scrollMenu').css('height', '80px');
+      }else{
+        $('.scrollMenu').css('height', '0px');
+      }
+    }
+  });
 
   //ANIMATE IN APP PROTOYPE
   $('.showPrototype').click(function() {
     //Bouncy Button
     //$('.showPrototype').animate({bottom: '60%'},400);
     $('.showPrototype').animate({bottom: '-20%'},400);
-    $(".appRow").css("height", "800px");
+    $(".appRow").css("height", "650px");
     $('.prototype').delay(400).animate({top: '55%'},600);
     $('.clearButton').delay(500).fadeIn('fast');
   });

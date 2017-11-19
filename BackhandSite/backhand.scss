@@ -106,10 +106,12 @@ body{
   position:fixed;
   top:0;
   width:100%;
-  height:80px;
+  height:0px;
   z-index: 6;
   background-image: url('images/gray_sand_@2X.png');
-  display:none;
+  overflow:hidden;
+  transition: height 0.3s;
+  //display:none;
 }
 
 .menuLogoContainer{
@@ -119,10 +121,19 @@ body{
   position: relative;
   padding:15px;
 }
-
+.menuLogoContainer:hover {
+   -webkit-animation: jumpRight1s ease 0s infinite normal ;
+   animation: jumpRight 1s ease 0s infinite normal ;
+   -webkit-filter: drop-shadow(0 0 20px $primaryColor);
+   filter: drop-shadow(0 0 20px $primaryColor);
+}
 .menuLogo {
   max-width: 100%;
   max-height: 100%;
+}
+
+.toggleMenu {
+  height:100% !important;
 }
 /* ----------- Top Jumbotron -----------*/
 .jumbotron {
@@ -146,7 +157,7 @@ body{
   position:relative;
   background-image: url('images/gray_sand_@2X.png');
   height:inherit;
-  border-right:3px solid $primaryColor;
+  border-right:2px solid $primaryColor;
   @media only screen and (max-width: 768px) {
     display:none;
   }
@@ -260,9 +271,70 @@ body{
 	transform: translateY(0);
   }
 }
+@-webkit-keyframes jumpRight {
+  0%{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+
+  }
+  20%{
+	-webkit-transform: translateX(0);
+	transform: translateY(0);
+  }
+  40%{
+	-webkit-transform: translateX(14px);
+	transform: translateX(14px);
+  }
+  50%{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+  }
+  60%{
+	-webkit-transform: translateX(7px);
+	transform: translateX(7px);
+  }
+  80%{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+  }
+  100%{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+  }
+}
+
+@keyframes jumpRight {
+  0%{
+	transform: translateX(0);
+  }
+  20%{
+	transform: translateX(0);
+  -webkit-filter: drop-shadow(0 0 20px $primaryLight);
+  filter: drop-shadow(0 0 20px #primaryLight);
+  transition: 1s;
+  }
+  40%{
+	transform: translateX(14px);
+  filter: drop-shadow(0 0 20px #primaryLight);
+  transition: 1s;
+  }
+  50%{
+	transform: translateX(0);
+
+  }
+  60%{
+	transform: translateX(7px);
+  }
+  80%{
+	transform: translateX(0);
+  }
+  100%{
+	transform: translateX(0);
+  }
+}
 
 .headlineWrapper {
-  border-radius:10px;
+  //border-radius:10px;
   background-color: $secondaryTransparent;
   position:absolute;
   right: -200%;
@@ -270,7 +342,7 @@ body{
   transform: translate(-50%,-50%);
   text-align: center;
   z-index: 1;
-  border:3px solid $primaryColor;
+  border:2px solid $primaryColor;
 
     h1 {
       font-family: 'Caveat', sans-serif;
@@ -364,10 +436,22 @@ body{
   margin-top: 0;
   height:inherit;
 
-  @media only screen and (max-width: 600px) {
-    border-top:3px solid $primaryColor;
-    border-radius: 20% 20% -0% 0%;
-    padding-top: 10px;
+    @media only screen and (max-width: 600px) {
+      position: relative;
+      &::after {
+        content:"";
+        background: $primaryColor;
+        position: absolute;
+        top: 0;
+        border-radius: 30px;
+        height: 2px;
+        width: 70%;
+        transform: translateX(-50%)
+      }
+      //border-top:3px solid $primaryColor;
+      //border-radius: 20% 20% -0% 0%;
+    padding-top: 15px;
+    padding-bottom: 10px;
   }
 }
 
@@ -453,7 +537,7 @@ body{
 }
 
 .featuresRow {
-  height:800px;
+  //height:800px;
   background-image:url('images/books.jpg');
   background-repeat: no-repeat;
   background-size: cover ;
@@ -539,6 +623,7 @@ body{
   position:relative;
   z-index: 4;
   text-align: center;
+  //border:5px dotted green;
   h2 {
     z-index: 3;
     color:black;
@@ -583,6 +668,130 @@ body{
 .testimonial:active{
   color:rgba(250,250,250,1.0);
 }
+.quoteRow {
+  overflow:hidden;
+  //border:3px dashed yellow;
+}
+
+.presidentPhotoWrap {
+  float:left;
+  width:400px;
+  //border:1px solid red;
+}
+
+.presidentPhotoContainer {
+  //border:4px solid blue;
+  float:left;
+  width:33%;
+  height:100%;
+}
+
+.presImage {
+  -webkit-filter: drop-shadow(0 3px 3px black);
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,0.3));
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.testimonialContainer {
+  position:absolute;
+  height:425px;
+  width:60%;
+  left: 500px;
+  bottom:12%;
+  padding-right: 50px;
+  text-align:left;
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color:white;
+    font-size:54px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom:5px;
+  }
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color:$primaryColor;
+    font-size:24px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom:40px;
+    margin-top: 0;
+  }
+  p {
+    font-size: 20px;
+    color: rgba(250,250,250,0.8);
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    line-height: 50px;
+    font-weight: 100;
+  }
+}
+
+.quoteRow {
+  position: relative;
+  height:500px;
+  margin-top:35px;
+  transition: height 0.3s;
+  //width:100%;
+
+}
+
+.quote {
+  text-align: left;
+  @media only screen and (max-width: 768px)  {
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color:white;
+    font-size:54px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom:5px;
+    margin-top: 5vw;
+  }
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color:$primaryColor;
+    font-size:24px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-bottom:5px;
+    margin-top: 0;
+  }
+  p {
+    font-size: 20px;
+    color: rgba(250,250,250,0.8);
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 40px;
+    font-weight: 100;
+  }
+}
+
+.presidentWrapper {
+  border:1px solid white;
+  position:absolute;
+  //width:100%;
+}
+
+.presidentPhotoContainer{
+  
+  border:1px solid black;
+  @media only screen and (max-width: 768px)  {
+    display:none;
+  }
+}
+.presidentialImage {
+  max-width: 85%;
+  max-height: 90%;
+  border-radius: 50%;
+  padding:0;
+  margins:0;
+
+}
+
 /* -----------------------------*/
 
 
