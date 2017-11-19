@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Backhand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel= "stylesheet" type="text/css" href="backhand.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src = "backhand.js"></script>
+  <script src = "backhandJQ.js"></script>
+</head>
+
+<body>
+<div class = 'mainContent'>
+
+  <div class="container" onclick="toggleMenu(this)">
+    <div class="bar1 "></div>
+    <div class="bar2 "></div>
+    <div class="bar3 "></div>
+  </div>
+
+  <div class = 'scrollMenu row'>
+    <div class = 'menuLogoContainer'>
+      <img src = 'images/backhandLogo.png' class = 'menuLogo'>
+    </div>
+  </div>
+
+
+  <!--------------------------------->
+  <div class = 'row jumbotron elevationTwo'>
+    <div class = 'leftJumbotron col-6 '>
+      <div class = 'imageWrapper'>
+        <img src = 'images/backhandLogo.png' class = 'backhandLogo'>
+      </div>
+    </div>
+
+    <div class = 'rightJumbotron col-6'>
+      <div class = 'headlineWrapper col-9 elevationOne'>
+        <h1>College can be stressful.</h1>
+        <h2>Backhand helps.</h2>
+        <a href ='#campuses' class = 'campusesButton elvOneHoverable'>Campuses</a>
+      </div>
+    </div>
+  </div>
+  <!--------------------------------->
+
+
+  <!--------------------------------->
+  <div class = 'row campusRow elevationOne' id = 'campuses'>
+    <div class = 'campusHeadline'>
+      <h1>Some <span>new</span> campuses</h1>
+    </div>
+    <!----------->
+    <div class = 'logoRow row'>
+    <div class = 'col-3 col-m-6 campus'>
+      <div class = 'imgWrapper'>
+        <img src = 'images/schoolLogos/kentState.png' class = 'campusLogo'>
+      </div>
+      <div class = 'campusDescription'>
+        <h3>Kent State</h3>
+        Kent, Ohio
+      </div>
+    </div>
+
+    <div class = 'col-3 col-m-6 campus leftBorder'>
+      <div class = 'imgWrapper'>
+        <img src = 'images/schoolLogos/ohioState.png' class = 'campusLogo'>
+      </div>
+      <div class = 'campusDescription'>
+        <h3>OSU</h3>
+        Columbus, Ohio
+      </div>
+    </div>
+
+    <div class = 'col-3 col-m-6 campus leftBorder'>
+      <div class = 'imgWrapper'>
+        <img src = 'images/schoolLogos/usc.png' class = 'campusLogo'>
+      </div>
+      <div class = 'campusDescription'>
+        <h3>USC</h3>
+        Los Angeles, California
+      </div>
+    </div>
+
+    <div class = 'col-3 col-m-6 campus leftBorder'>
+      <div class = 'imgWrapper'>
+        <img src = 'images/schoolLogos/northCarolina.png' class = 'campusLogo'>
+      </div>
+      <div class = 'campusDescription'>
+        <h3>UNC</h3>
+        Chapel Hill, NC
+      </div>
+    </div>
+  </div>
+  <!----------->
+
+  <div class = 'seeMoreCollegesButton'>View all colleges</div>
+  </div>
+
+  <div class = 'appRow row elevationOne'>
+    <iframe class = 'prototype elevationFive' width="362" height="640" src="https://xd.adobe.com/embed/63a7c75d-46d7-4a61-b961-96ee827fb2cb" frameborder="0" allowfullscreen></iframe>
+    <div class = 'showPrototype elvOneHoverable'>Try it out</div>
+    <img src = 'images/clear.png' class = 'clearButton elvOneHoverable'>
+  </div>
+
+  <div class = 'featuresRow row'>
+    <div class = 'testimonialsDiv'><h2>Testimonials</h2></div>
+    <div class = 'testimonialsRow row'>
+      <div class = 'col-2 testimonial'>Harvord</div>
+      <div class = 'col-2 testimonial leftBorder'>Akron</div>
+      <div class = 'col-2 testimonial leftBorder'>Kent</div>
+      <div class = 'col-2 testimonial leftBorder'>OSU</div>
+      <div class = 'col-2 testimonial leftBorder'>UNC</div>
+      <div class = 'col-2 testimonial leftBorder'>USC</div>
+    </div>
+  </div>
+
+  <div class = 'footer row elevationOne'>
+
+  </div>
+
+</div>
+
+</body>
+</html>
