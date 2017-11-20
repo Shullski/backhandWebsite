@@ -575,7 +575,9 @@ body {
 .testimonial {
   cursor: pointer;
   font-weight: lighter;
-  position: relative; }
+  position: relative;
+  user-select: none;
+  transition: 0.3s; }
   .testimonial span {
     position: absolute;
     border: 1px solid white;
@@ -583,6 +585,8 @@ body {
     height: 100%;
     bottom: 0;
     left: 0; }
+  .testimonial:active {
+    background-color: rgba(247, 91, 84, 0.05); }
 
 .testimonialDropdown {
   position: relative;
@@ -598,7 +602,7 @@ body {
   padding-left: 20px;
   transition: 0.2s;
   cursor: pointer; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     .testimonialDropdown {
       display: none; } }
   .testimonialDropdown option {
@@ -670,7 +674,8 @@ body {
     font-weight: lighter;
     letter-spacing: 2px;
     margin-bottom: 40px;
-    margin-top: 0; }
+    margin-top: 0;
+    text-shadow: 0 0 3px #c8c8c8; }
   .testimonialContainer p {
     font-size: 20px;
     color: rgba(250, 250, 250, 0.8);
@@ -695,16 +700,16 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
     font-size: 54px;
-    font-weight: lighter;
+    font-weight: 100;
     letter-spacing: 2px;
     margin-bottom: 5px;
-    margin-top: 5vw; }
+    margin-top: 7vw; }
   .quote h3 {
     font-family: 'Roboto Condensed', sans-serif;
     color: #F75B54;
     font-size: 24px;
-    font-weight: lighter;
-    letter-spacing: 2px;
+    font-weight: bolder;
+    letter-spacing: 3px;
     margin-bottom: 5px;
     margin-top: 0; }
   .quote p {
@@ -725,9 +730,11 @@ body {
 .presidentialImage {
   max-width: 85%;
   max-height: 90%;
-  border-radius: 50%;
   padding: 0;
-  margins: 0; }
+  border: 2px solid #F75B54;
+  margins: 0;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); }
 
 /* -----------------------------*/
 /* Material Design Box Shadows */
