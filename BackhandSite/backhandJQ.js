@@ -16,6 +16,7 @@ $(document).ready(function(){
     }
   }
 
+  //EXPAND/COLLAPSE TOP MENU
   $('.container').click(function() {
     if (!($('.scrollMenu').hasClass('toggled'))) {
       $('.scrollMenu').css('height', '100vh');
@@ -51,7 +52,7 @@ $(document).ready(function(){
     $('.showPrototype').animate({bottom: '-20%'},400);
     $(".appRow").css("height", "650px");
     $('.prototype').delay(400).animate({top: '55%'},600);
-    $('.clearButton').delay(500).fadeIn('fast');
+    $('.clearButton').delay(500).fadeIn(1000);
   });
 
   //ANIMATE OUT APP PROTOYPE
